@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:14:29 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/18 14:08:07 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/18 21:32:26 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,10 @@ static	int	check_valid_chars(char	*line)
 	i = 0;
 	while (i < len_line - 2)
 	{
-		if (!(line[i] == '0' || line[i] == '1' || line[i] == 'P' || line[i] == 'C' || line[i] == 'E'))
+		if (!(line[i] == '0' || line[i] == '1'
+				|| line[i] == 'P' || line[i] == 'C' || line[i] == 'E'))
 		{
-		printf("from check valid : %d i=%d\n", line[i], i);
+			printf("from check valid : %d i=%d\n", line[i], i);
 			return (0);
 		}
 		i++;
@@ -74,7 +75,7 @@ int	check_map(int argc, char	*path)
 		printf("%s", line);
 		if (ft_strlen(line) != len_frst_line)
 			return (0);
-		if (check_valid_chars(line) == 0)
+		if (check_valid_chars(line) == 0 || check_line(1, line) == 0)
 			return (0);
 		line = get_next_line(fd);
 		nl++;

@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 16:37:33 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/18 12:58:22 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/18 21:26:23 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int argc, char	**argv)
 {
-	if(check_map(argc, argv[1]) == 0)
+	if (check_map(argc, argv[1]) == 0)
 		printf("Error!");
 	return (0);
 }
