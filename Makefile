@@ -6,7 +6,7 @@
 #    By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/17 16:37:28 by anaouadi          #+#    #+#              #
-#    Updated: 2021/10/18 11:18:46 by anaouadi         ###   ########.fr        #
+#    Updated: 2021/10/18 11:22:06 by anaouadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ $(LIBFT):
 
 clean:
 	rm -rf $(ODIR)/*.o
+	make fclean -C ./libft/ 
 
 fclean: clean
 	rm -rf $(NAME)
