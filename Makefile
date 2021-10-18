@@ -6,12 +6,12 @@
 #    By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/17 16:37:28 by anaouadi          #+#    #+#              #
-#    Updated: 2021/10/18 11:22:06 by anaouadi         ###   ########.fr        #
+#    Updated: 2021/10/18 13:41:07 by anaouadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=so_long
-CFLAGS= -Wall -Wextra -Werror
+CFLAGS=# -Wall -Wextra -Werror -g
 CC=gcc
 _SRCS=main.c check_map.c
 SRCDIR=srcs
@@ -45,6 +45,6 @@ fclean: clean
 re: fclean all
 
 no:
-	norminette *.c
+	norminette $(SRCDIR)/*.c
 
 .PHONY: clean fclean re no

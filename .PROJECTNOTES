@@ -20,3 +20,14 @@
 	e- The player’s goal is to collect all collectibles present on the map then escape with minimal movement.
 
 
+####################### Check map #######################
+
+1- check_line(int is_middle, char *line) : this function returns 1 if the line is valid and 0 if it's not, if the line is in the middle then it just checks the first and last character if it is 1 or not, and if the line is not in the middle it checks if all of the charactres are 1.
+
+2- check_valid_chars(char *line) : this function checks if the line has other characters than '0', '1', 'C', 'E', 'P', it returns 0 if it found other then those characters and 1 if only it found those characters.
+
+3- if the length of a line differs then the length of the first line, then it's not a valid map. (done)
+
+4- if the length of the first line equals to the number of lines then, then it's not a valid map. (done)
+
+#########################################################
