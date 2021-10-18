@@ -1,3 +1,22 @@
-1- Create a function that checks the map if it is correct or not (statisfies the condidtions).
+1- Check the map if it is valid or not.
+	a- The map must be composed of only 5 possible characters: 0 for an empty space, 1 for a wall, C for a collectible, E for map exit and P for the player’s starting position.
+	b- The map must be closed/surrounded by walls, if not the program must return an error.
+	c- Map must have at least one exit, one collectible, and one starting position.
+	d- The map must be rectangular.
+	e- If any misconfiguration of any kind is encountered in the file, the program must exit properly and return "Error\n" followed by an explicit error message of your choice.
 
-2- Draw the game from the assets and the map. 
+2- Draw the map:
+	a- Draw walls.
+	b- Draw floor.
+	c- Draw exit.
+	d- Draw collectibles.
+	e- Draw player.
+
+3- Code functionality:
+	a- The W, A, S, and D keys will be used to move the main character.
+	b- Pressing ESC must close the window and quit the program cleanly.
+	c- Clicking on the red cross on the window’s frame must close the window and quit the program cleanly.
+	d- player cannot move into walls.
+	e- The player’s goal is to collect all collectibles present on the map then escape with minimal movement.
+
+
