@@ -1,9 +1,9 @@
 1- Check the map if it is valid or not.
-	a- The map must be composed of only 5 possible characters: 0 for an empty space, 1 for a wall, C for a collectible, E for map exit and P for the player’s starting position.
-	b- The map must be closed/surrounded by walls, if not the program must return an error.
-	c- Map must have at least one exit, one collectible, and one starting position.
-	d- The map must be rectangular.
-	e- If any misconfiguration of any kind is encountered in the file, the program must exit properly and return "Error\n" followed by an explicit error message of your choice.
+	a- The map must be composed of only 5 possible characters: 0 for an empty space, 1 for a wall, C for a collectible, E for map exit and P for the player’s starting position. (done)
+	b- The map must be closed/surrounded by walls, if not the program must return an error. (done)
+	c- Map must have at least one exit, one collectible, and one starting position. (not yet)
+	d- The map must be rectangular.(done)
+	e- If any misconfiguration of any kind is encountered in the file, the program must exit properly and return "Error\n" followed by an explicit error message of your choice.(done)
 
 2- Draw the map:
 	a- Draw walls.
@@ -29,5 +29,7 @@
 3- if the length of a line differs then the length of the first line, then it's not a valid map. (done)
 
 4- if the length of the first line equals to the number of lines then, then it's not a valid map. (done)
+
+I forget that the line has the new line character at the end and it's calculated in the length, that's what caused me many problems.
 
 #########################################################
