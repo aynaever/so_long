@@ -6,20 +6,39 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 10:21:55 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/20 12:16:22 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/20 13:03:29 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char	**store_map(char	*path, int noc, int nor)
+static int	get_nor(char *path)
+{
+	int		nor;
+	char	*line;
+	int		fd;
+
+	line = get_next_line(fd);
+	fd = open(path, O_RDONLY);
+	while (line != NULL)
+	{
+		free(line);
+		line = get_next_line(fd);
+		nor++;
+	}
+	return (nor);
+}
+
+char	**store_map(char	*path)
 {
 	int		fd;
 	int		i;
 	char	*line;
 	char	**map;
+	int		nor;
 
 	fd = open(path, O_RDONLY);
+	nor = get_nor(path);
 	map = (char **)malloc(nor * sizeof(char *));
 	if (map == NULL || fd == -1)
 		return (NULL);
@@ -39,7 +58,7 @@ int	main(int argc, char	**argv)
 	char	**map;
 	int		i;
 
-	map = store_map(argv[1], 13, 5);
+	map = store_map(argv[1]);
 	if (map == NULL || argc != 2)
 		return (0);
 	i = 0;

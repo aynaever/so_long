@@ -6,7 +6,7 @@
 #    By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/17 16:37:28 by anaouadi          #+#    #+#              #
-#    Updated: 2021/10/18 13:41:07 by anaouadi         ###   ########.fr        #
+#    Updated: 2021/10/20 12:24:06 by anaouadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,6 @@ fclean: clean
 re: fclean all
 
 no:
-	norminette $(SRCDIR)/*.c
+	norminette $(SRCDIR)/*.c $(SRCDIR)/*.h
 
 .PHONY: clean fclean re no
