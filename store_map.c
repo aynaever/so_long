@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 13:09:00 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/20 13:09:14 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/20 13:13:31 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,21 +51,4 @@ char	**store_map(char	*path)
 		i++;
 	}
 	return (map);
-}
-
-int	main(int argc, char	**argv)
-{
-	char	**map;
-	int		i;
-
-	map = store_map(argv[1]);
-	if (map == NULL || argc != 2)
-		return (0);
-	i = 0;
-	while (i <= 4)
-	{
-		printf("map[%d] = %s\n", i, map[i]);
-		i++;
-	}
-	return (0);
 }
