@@ -6,7 +6,7 @@
 #    By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/17 16:37:28 by anaouadi          #+#    #+#              #
-#    Updated: 2021/10/22 07:02:18 by anaouadi         ###   ########.fr        #
+#    Updated: 2021/10/22 08:05:29 by anaouadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ $(OBJS):$(SRCS)
 	cd ..
 
 $(NAME): $(OBJS) $(LIBFT)
-	$(CC) $(CFLAGS) -Lminilibx-linux -lmlx_Linux -L/usr/lib -Iminilibx-linux -lXext -lX11 -lm -lz $(OBJS) $(LIBFT) -o $(NAME) 
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT) -Lminilibx-linux -lmlx_Linux -L/usr/lib -Iminilibx-linux -lXext -lX11 -lm -lz
 $(LIBFT):
 	make -C ./libft/
 
