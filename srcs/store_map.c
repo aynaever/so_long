@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 13:09:00 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/20 13:13:31 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/20 13:49:59 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@ static int	get_nor(char *path)
 	char	*line;
 	int		fd;
 
-	line = get_next_line(fd);
 	fd = open(path, O_RDONLY);
+	line = get_next_line(fd);
+	nor = 0;
 	while (line != NULL)
 	{
 		free(line);

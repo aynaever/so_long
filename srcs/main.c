@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 16:37:33 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/20 13:04:46 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/21 13:12:50 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,23 @@
 
 int	main(int argc, char	**argv)
 {
-	char	**map;
-
 	if (check_map(argc, argv[1]) == 0)
+	{
 		printf("Error!\n");
-	map = store_map(argv[1]);
+		return (0);
+	}
+	store_map(argv[1]);
+	//draw_map(argv[1]);
+	void	*mlx;
+	void	*win;
+	int		height, width;
+	void	*img;
+
+	mlx = mlx_init();
+	win = mlx_new_window(mlx, 500,500, "fly");
+	img = mlx_xpm_file_to_image(mlx, "../img/exit.xpm", &width, &height);
+	printf("img_ptr = %p\n", img);
+	mlx_put_image_to_window(mlx, win, img, 0, 0);
+	mlx_loop(mlx);
 	return (0);
 }

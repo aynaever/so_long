@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:14:29 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/19 15:08:47 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/20 13:50:49 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static int	check_line(int	is_middle, char	*line)
 	size_t	i;
 
 	len_line = ft_strlen(line);
+	i = 0;
 	if (is_middle != 1)
 	{
 		if (line[0] == '1' && line[len_line - 2] == '1')
@@ -57,7 +58,7 @@ static	int	check_valid_chars(char	*line)
 
 static int	count_comps(char *line, int	*ex, int *col, int *st)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < ft_strlen(line) - 2)
@@ -109,6 +110,7 @@ int	check_map(int argc, char	*path)
 	if (fd == -1 || argc != 2)
 		return (0);
 	line = get_next_line(fd);
+	old_line = line;
 	len_frst = ft_strlen(line);
 	while (line != NULL)
 	{

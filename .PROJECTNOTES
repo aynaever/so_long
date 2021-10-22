@@ -36,7 +36,13 @@ I forget that the line has the new line character at the end and it's calculated
 
 #########################################################
 
+a static library : all of their functions get copied in the executable file, so it won't depend on in libs in the system.
+
+-L to specify the path where to look for libs.
+
+-l to specify the name of library without the prefix of lib and suffix of .a
 
 ####################### Draw the map #######################
 
 1- draw_comp(mlx *mlx_ptr, win *win_ptr) : this function will draw 
+
