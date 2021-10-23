@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:21:59 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/20 14:07:44 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/23 17:55:19 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <stdbool.h>
+
+typedef	struct	s_coor {
+	int	*x;
+	int	*y;
+}				t_coor;
 
 int		check_map(int argc, char	*path);
 int		draw_map();
