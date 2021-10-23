@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:21:59 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/23 17:55:19 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/23 19:41:14 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef	struct	s_coor {
 }				t_coor;
 
 int		check_map(int argc, char	*path);
-int		draw_map();
+int		draw_map(char	**map);
 char	**store_map(char	*path);
 
 #endif
