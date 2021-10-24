@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:14:29 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/20 13:50:49 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/24 10:21:45 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ static	int	check_comps(char	*path)
 		count_comps(line, &ex, &col, &st);
 		line = get_next_line(fd);
 	}
-	if (ex >= 1 && col >= 1 && st >= 1)
+	if (ex >= 1 && col >= 1 && st == 1)
 		return (1);
 	return (0);
 }

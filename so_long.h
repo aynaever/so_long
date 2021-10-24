@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:21:59 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/23 20:36:47 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/24 10:58:49 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <stdlib.h>
 # include <stdbool.h>
 
+#define	ESC_KEY 65307
+
 typedef struct s_coor {
 	int	x;
 	int	y;
@@ -27,7 +29,8 @@ typedef struct s_coor {
 }				t_coor;
 
 int		check_map(int argc, char	*path);
-int		draw_map(char	**map);
+void	*draw_map(char	**map, void	*mlx);
 char	**store_map(char	*path);
+void	*add_func(void	*win);
 
 #endif
