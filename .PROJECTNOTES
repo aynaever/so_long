@@ -5,12 +5,12 @@
 	d- The map must be rectangular.(done)
 	e- If any misconfiguration of any kind is encountered in the file, the program must exit properly and return "Error\n" followed by an explicit error message of your choice.(done)
 
-2- Draw the map:
-	a- Draw walls.
-	b- Draw floor.
-	c- Draw exit.
-	d- Draw collectibles.
-	e- Draw player.
+2- Draw the map:(done)
+	a- Draw walls.(done)
+	b- Draw floor.(done)
+	c- Draw exit.(done)
+	d- Draw collectibles.(done)
+	e- Draw player.(done)
 
 3- Code functionality:
 	a- The W, A, S, and D keys will be used to move the main character.

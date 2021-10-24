@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 13:09:00 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/20 13:49:59 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/23 23:47:45 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,6 @@ char	**store_map(char	*path)
 		line = get_next_line(fd);
 		i++;
 	}
+	map[i] = '\0';
 	return (map);
 }
