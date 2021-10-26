@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 10:21:55 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/24 10:48:40 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/24 11:56:59 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ static	void	*draw_row(void	*mlx, void	*win, t_coor coor, char	*line)
 			draw_player(mlx, win, coor);
 		else if (line[i] == 'E')
 			draw_exit(mlx, win, coor);
-		coor.x += 50;
+		coor.x += 60;
 		//printf("col[%d] = %c; coor.x = %d; coo.y = %d\n", i, line[i], coor.x, coor.y);
 		i++;
 	}
@@ -116,7 +116,7 @@ void	*draw_map(char	**map, void	*mlx)
 	while (i < 5)
 	{
 		draw_row(mlx, win, coor, map[i]);
-		coor.y += 60;
+		coor.y += 63;
 		i++;
 	}
 	return (win);
