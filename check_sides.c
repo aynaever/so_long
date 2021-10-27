@@ -6,63 +6,63 @@
 /*   By: me </var/spool/mail/me>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 10:58:08 by me                #+#    #+#             */
-/*   Updated: 2021/10/26 11:33:41 by me               ###   ########.fr       */
+/*   Updated: 2021/10/27 11:26:06 by me               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	check_right(char **map, t_pos pos)
+int	check_right(char **map, t_pos *pos)
 {
-	if ((pos.x + 1) > pos.n_cols)
+	if (((pos->x) + 1 > pos->n_cols))
 		return (0);
-	else if ((map[pos.y][pos.x + 1] == 'P') || (map[pos.y][pos.x + 1] == '0'))
+	else if ((map[pos->y][(pos->x) + 1] == 'P') || (map[pos->y][(pos->x) + 1] == '0'))
 		return (1);
-	else if ((map[pos.y][pos.x + 1] == 'C'))
+	else if ((map[pos->y][(pos->x) + 1] == 'C'))
 		return (2);
-	else if ((map[pos.y][pos.x + 1] == 'E'))
+	else if ((map[pos->y][(pos->x) + 1] == 'E'))
 		return (3);
 	else
 		return (0);
 }
 
-int	check_left(char **map, t_pos pos)
+int	check_left(char **map, t_pos *pos)
 {
-	if ((pos.x - 1) >= 0)
+	if ((pos->x - 1) >= 0)
 		return (0);
-	else if ((map[pos.y][pos.x - 1] == 'P') || (map[pos.y][pos.x - 1] == '0'))
+	else if ((map[pos->y][pos->x - 1] == 'P') || (map[pos->y][pos->x - 1] == '0'))
 		return (1);
-	else if ((map[pos.y][pos.x - 1] == 'C'))
+	else if ((map[pos->y][pos->x - 1] == 'C'))
 		return (2);
-	else if ((map[pos.y][pos.x - 1] == 'E'))
+	else if ((map[pos->y][pos->x - 1] == 'E'))
 		return (3);
 	else
 		return (0);
 }
 
-int	check_up(char **map, t_pos pos)
+int	check_up(char **map, t_pos *pos)
 {
-	if ((pos.y + 1) >= 0)
+	if ((pos->y + 1) >= 0)
 		return (0);
-	else if ((map[pos.y + 1][pos.x] == 'P') || (map[pos.y + 1][pos.x] == '0'))
+	else if ((map[pos->y + 1][pos->x] == 'P') || (map[pos->y + 1][pos->x] == '0'))
 		return (1);
-	else if ((map[pos.y + 1][pos.x] == 'C'))
+	else if ((map[pos->y + 1][pos->x] == 'C'))
 		return (2);
-	else if ((map[pos.y + 1][pos.x] == 'E'))
+	else if ((map[pos->y + 1][pos->x] == 'E'))
 		return (3);
 	else
 		return (0);
 }
 
-int	check_bottom(char **map, t_pos pos)
+int	check_bottom(char **map, t_pos *pos)
 {
-	if ((pos.y - 1) > pos.n_rows)
+	if ((pos->y - 1) > pos->n_rows)
 		return (0);
-	else if ((map[pos.y - 1][pos.x] == 'P') || (map[pos.y - 1][pos.x] == '0'))
+	else if ((map[pos->y - 1][pos->x] == 'p') || (map[pos->y - 1][pos->x] == '0'))
 		return (1);
-	else if ((map[pos.y - 1][pos.x] == 'C'))
+	else if ((map[pos->y - 1][pos->x] == 'C'))
 		return (2);
-	else if ((map[pos.y - 1][pos.x] == 'E'))
+	else if ((map[pos->y - 1][pos->x] == 'E'))
 		return (3);
 	else
 		return (0);
