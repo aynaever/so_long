@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:21:59 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/28 11:38:25 by me               ###   ########.fr       */
+/*   Updated: 2021/10/28 13:37:18 by me               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,12 @@
 # define	D_KEY 100
 
 typedef struct s_coor {
-	int	x;
-	int	y;
-	int	*width;
-	int	*height;
+	void	*mlx;
+	void	*win;
+	int		x;
+	int		y;
+	int		width;
+	int		height;
 }				t_coor;
 
 typedef struct s_pos {
@@ -55,5 +57,10 @@ int		calc_rows(char	**map);
 void	*draw_map(char	**map, void	*mlx);
 char	**store_map(char	*path);
 void	add_func(void	*win, t_pos *pos);
+void	*draw_wall(t_coor *coor);
+void	*draw_floor(t_coor *coor);
+void	*draw_exit(t_coor *coor);
+void	*draw_coll(t_coor *coor);
+void	*draw_player(t_coor *coor);
 
 #endif
