@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:21:59 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/27 10:50:48 by me               ###   ########.fr       */
+/*   Updated: 2021/10/28 11:38:25 by me               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,13 @@ typedef struct s_coor {
 	int	*height;
 }				t_coor;
 
-typedef	struct s_pos {
-	int	x;
-	int	y;
-	int	n_rows;
-	int	n_cols;
+typedef struct s_pos {
+	int		x;
+	int		y;
+	int		n_rows;
+	int		n_cols;
+	int		n_coll;
+	int		n_ate;
 	char	**map;
 }				t_pos;
 
