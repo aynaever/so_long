@@ -6,13 +6,13 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 10:21:55 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/29 12:30:44 by me               ###   ########.fr       */
+/*   Updated: 2021/10/29 15:29:10 by me               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static	void	*draw_row(t_coor *coor, char	*line)
+static	void	**draw_row(t_coor *coor, char	*line)
 {
 	int		i;
 	int		len;
@@ -34,7 +34,7 @@ static	void	*draw_row(t_coor *coor, char	*line)
 			img_line[i] = draw_player(coor);
 		else if (line[i] == 'E')
 			img_line[i] = draw_exit(coor);
-		coor->x += 60;
+		coor->x += 63;
 		i++;
 	}
 	return (img_line);
@@ -50,7 +50,7 @@ int	calc_rows(char	**map)
 	return (i);
 }
 
-void	*draw_map(char	**map, void	*mlx, void	**imgs)
+void	*draw_map(char	**map, void	*mlx, void	***imgs, t_pos *pos)
 {
 	void	*win;
 	int		i;
@@ -62,11 +62,16 @@ void	*draw_map(char	**map, void	*mlx, void	**imgs)
 	coor.y = 0;
 	n_rows = calc_rows(map);
 	n_cols = ft_strlen(map[0]);
-	imgs = (void **)malloc(n_rows * sizeof(void *));
 	i = 0;
-	win = mlx_new_window(mlx, n_cols * 60, n_rows * 60, "Funny Game");
+	win = mlx_new_window(mlx, n_cols * 63, n_rows * 63, "Funny Game");
 	coor.win = win;
 	coor.mlx = mlx;
+	coor.imgs = imgs;
+	pos->coor = &coor;
+	pos->imgs = imgs;
+	printf("imgs = %p\n", imgs);
+	printf("pos->coor->imgs = %p\n", pos->coor->imgs);
+	printf("pos->coor = %p\n", pos->coor);
 	while (i < 5)
 	{
 		imgs[i] = draw_row(&coor, map[i]);

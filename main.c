@@ -1,5 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
@@ -42,7 +40,7 @@ int	main(int argc, char	**argv)
 	char	**map;
 	void	*win;
 	void	*mlx;
-	void	**imgs;
+	void	***imgs;
 	t_pos	pos;
 
 	if (check_map(argc, argv[1]) == 0)
@@ -50,15 +48,17 @@ int	main(int argc, char	**argv)
 		printf("Error!\n");
 		return (0);
 	}
-	imgs = NULL;
 	mlx = mlx_init();
 	map = store_map(argv[1]);
 	pos.map = map;
 	pos.n_rows = calc_rows(map);
 	pos.n_cols = ft_strlen(map[0]);
+	imgs = (void ***)malloc(pos.n_rows * sizeof(void*));
 	pos.n_ate = 0;
+	pos.mlx = mlx;
 	set_pos_player(map, &pos);
-	win = draw_map(map, mlx, imgs);
+	win = draw_map(map, mlx, imgs, &pos);
+	pos.win = win;
 	add_func(win, &pos);
 	mlx_loop(mlx);
 	return (0);

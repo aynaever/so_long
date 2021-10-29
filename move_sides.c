@@ -10,6 +10,8 @@
 
 #include "so_long.h"
 
+
+
 int	move_right(char	**map, t_pos *pos)
 {
 	int	ret_check;
@@ -19,19 +21,22 @@ int	move_right(char	**map, t_pos *pos)
 		return (0);
 	else if (ret_check == 1)
 	{
-		pos->x++;
+		printf("pos->coor->imgs (do_gmove_r) = %p\n", pos->imgs);
+		printf("pos->coor = (do_move_r) %p\n", pos->coor);
+		do_gmove_r(pos->imgs, pos);
 		printf("Move to right x=%d ; y=%d \n", pos->x, pos->y);
 	}
 	else if (ret_check == 2)
 	{
-		pos->x++;
 		pos->n_ate++;
 		map[pos->y][pos->x] = '0';
+		do_gmove_r(pos->imgs, pos);
 		printf("Eat Collectible x=%d ; y=%d \n", pos->x, pos->y);
 	}
 	else if (ret_check == 3 && pos->n_ate == pos->n_coll)
 	{
 		pos->x++;
+		do_gmove_r(pos->imgs, pos);
 		printf("Exit x=%d ; y=%d \n", pos->x, pos->y);
 		exit(0);
 	}
@@ -47,19 +52,20 @@ int	move_left(char	**map, t_pos *pos)
 		return (0);
 	else if (ret_check == 1)
 	{
-		pos->x--;
+		do_gmove_l(pos->imgs, pos);
 		printf("Move to left x=%d ; y=%d \n", pos->x, pos->y);
 	}
 	else if (ret_check == 2)
 	{
-		pos->x--;
 		pos->n_ate++;
 		map[pos->y][pos->x] = '0';
+		do_gmove_l(pos->imgs, pos);
 		printf("Eat Collectible x=%d ; y=%d \n", pos->x, pos->y);
 	}
 	else if (ret_check == 3 && pos->n_ate == pos->n_coll)
 	{
 		pos->x--;
+		do_gmove_l(pos->imgs, pos);
 		printf("Exit x=%d ; y=%d \n", pos->x, pos->y);
 		exit(0);
 	}
@@ -75,14 +81,14 @@ int	move_up(char	**map, t_pos *pos)
 		return (0);
 	else if (ret_check == 1)
 	{
-		pos->y--;
+		do_gmove_u(pos->imgs, pos);
 		printf("Move to up x=%d ; y=%d \n", pos->x, pos->y);
 	}
 	else if (ret_check == 2)
 	{
-		pos->y--;
 		pos->n_ate++;
 		map[pos->y][pos->x] = '0';
+		do_gmove_u(pos->imgs, pos);
 		printf("Eat Collectible up x=%d ; y=%d \n", pos->x, pos->y);
 	}
 	else if (ret_check == 3 && pos->n_ate == pos->n_coll)
@@ -103,19 +109,19 @@ int	move_bottom(char	**map, t_pos *pos)
 		return (0);
 	else if (ret_check == 1)
 	{
-		pos->y++;
+		do_gmove_b(pos->imgs, pos);
 		printf("Move to bottom up x=%d ; y=%d \n", pos->x, pos->y);
 	}
 	else if (ret_check == 2)
 	{
-		pos->y++;
 		pos->n_ate++;
 		map[pos->y][pos->x] = '0';
+		do_gmove_b(pos->imgs, pos);
 		printf("Eat Collectible up x=%d ; y=%d \n", pos->x, pos->y);
 	}
 	else if (ret_check == 3 && pos->n_ate == pos->n_coll)
 	{
-		pos->y++;
+		do_gmove_b(pos->imgs, pos);
 		printf("Exit up x=%d ; y=%d \n", pos->x, pos->y);
 		exit(0);
 	}

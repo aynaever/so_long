@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:21:59 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/29 12:31:59 by me               ###   ########.fr       */
+/*   Updated: 2021/10/29 15:36:56 by me               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 typedef struct s_coor {
 	void	*mlx;
 	void	*win;
+	void	***imgs;
 	int		x;
 	int		y;
 	int		width;
@@ -35,12 +36,16 @@ typedef struct s_coor {
 }				t_coor;
 
 typedef struct s_pos {
+	void	*mlx;
+	void	*win;
 	int		x;
 	int		y;
 	int		n_rows;
 	int		n_cols;
 	int		n_coll;
 	int		n_ate;
+	t_coor	*coor;
+	void	***imgs;
 	char	**map;
 }				t_pos;
 
@@ -54,7 +59,7 @@ int		move_left(char **map, t_pos *pos);
 int		move_up(char **map, t_pos *pos);
 int		move_bottom(char **map, t_pos *pos);
 int		calc_rows(char	**map);
-void	*draw_map(char	**map, void	*mlx, void	**imgs);
+void	*draw_map(char	**map, void	*mlx, void	***imgs, t_pos *pos);
 char	**store_map(char	*path);
 void	add_func(void	*win, t_pos *pos);
 void	*draw_wall(t_coor *coor);
@@ -62,5 +67,9 @@ void	*draw_floor(t_coor *coor);
 void	*draw_exit(t_coor *coor);
 void	*draw_coll(t_coor *coor);
 void	*draw_player(t_coor *coor);
+int		do_gmove_r(void	***imgs, t_pos *pos);
+int		do_gmove_l(void	***imgs, t_pos *pos);
+int		do_gmove_u(void	***imgs, t_pos *pos);
+int		do_gmove_b(void	***imgs, t_pos *pos);
 
 #endif
