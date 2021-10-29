@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 10:21:55 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/28 13:38:31 by me               ###   ########.fr       */
+/*   Updated: 2021/10/29 12:30:44 by me               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,30 @@
 
 static	void	*draw_row(t_coor *coor, char	*line)
 {
-	int	i;
-	int	len;
+	int		i;
+	int		len;
+	void	**img_line;
 
 	i = 0;
 	len = ft_strlen(line);
+	img_line = malloc(len * sizeof(void *));
 	coor->x = 0;
 	while (i < len - 1)
 	{
 		if (line[i] == '1')
-			draw_wall(coor);
+			img_line[i] = draw_wall(coor);
 		else if (line[i] == '0')
-			draw_floor(coor);
+			img_line[i] = draw_floor(coor);
 		else if (line[i] == 'C')
-			draw_coll(coor);
+			img_line[i] = draw_coll(coor);
 		else if (line[i] == 'P')
-			draw_player(coor);
+			img_line[i] = draw_player(coor);
 		else if (line[i] == 'E')
-			draw_exit(coor);
+			img_line[i] = draw_exit(coor);
 		coor->x += 60;
 		i++;
 	}
-	return (NULL);
+	return (img_line);
 }
 
 int	calc_rows(char	**map)
@@ -48,7 +50,7 @@ int	calc_rows(char	**map)
 	return (i);
 }
 
-void	*draw_map(char	**map, void	*mlx)
+void	*draw_map(char	**map, void	*mlx, void	**imgs)
 {
 	void	*win;
 	int		i;
@@ -60,13 +62,14 @@ void	*draw_map(char	**map, void	*mlx)
 	coor.y = 0;
 	n_rows = calc_rows(map);
 	n_cols = ft_strlen(map[0]);
+	imgs = (void **)malloc(n_rows * sizeof(void *));
 	i = 0;
 	win = mlx_new_window(mlx, n_cols * 60, n_rows * 60, "Funny Game");
 	coor.win = win;
 	coor.mlx = mlx;
 	while (i < 5)
 	{
-		draw_row(&coor, map[i]);
+		imgs[i] = draw_row(&coor, map[i]);
 		coor.y += 63;
 		i++;
 	}

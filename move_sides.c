@@ -33,6 +33,7 @@ int	move_right(char	**map, t_pos *pos)
 	{
 		pos->x++;
 		printf("Exit x=%d ; y=%d \n", pos->x, pos->y);
+		exit(0);
 	}
 	return (0);
 }
@@ -60,6 +61,7 @@ int	move_left(char	**map, t_pos *pos)
 	{
 		pos->x--;
 		printf("Exit x=%d ; y=%d \n", pos->x, pos->y);
+		exit(0);
 	}
 	return (0);
 }
@@ -87,6 +89,7 @@ int	move_up(char	**map, t_pos *pos)
 	{
 		pos->y--;
 		printf("Exit up x=%d ; y=%d \n", pos->x, pos->y);
+		exit(0);
 	}
 	return (0);
 }
@@ -114,6 +117,7 @@ int	move_bottom(char	**map, t_pos *pos)
 	{
 		pos->y++;
 		printf("Exit up x=%d ; y=%d \n", pos->x, pos->y);
+		exit(0);
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:21:59 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/28 13:37:18 by me               ###   ########.fr       */
+/*   Updated: 2021/10/29 12:31:59 by me               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int		move_left(char **map, t_pos *pos);
 int		move_up(char **map, t_pos *pos);
 int		move_bottom(char **map, t_pos *pos);
 int		calc_rows(char	**map);
-void	*draw_map(char	**map, void	*mlx);
+void	*draw_map(char	**map, void	*mlx, void	**imgs);
 char	**store_map(char	*path);
 void	add_func(void	*win, t_pos *pos);
 void	*draw_wall(t_coor *coor);
