@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 01:43:42 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/29 13:20:30 by me               ###   ########.fr       */
+/*   Updated: 2021/10/30 11:11:42 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	key_hook(int	keycode, t_pos *pos)
 {
 	printf("%d\n", keycode);
 	if (keycode == ESC_KEY)
-		printf("destroy window\n");
+		exit(0);
 	else if (keycode == A_KEY)
 		move_left(pos->map, pos);
 	else if (keycode == S_KEY)

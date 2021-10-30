@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 11:01:27 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/30 11:01:55 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/30 11:13:09 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	main(int argc, char	**argv)
 	pos.map = map;
 	pos.n_rows = calc_rows(map);
 	pos.n_cols = ft_strlen(map[0]);
-	imgs = (void ***) malloc(pos.n_rows * sizeof(void*));
+	imgs = (void ***) malloc(pos.n_rows * sizeof(void *));
 	pos.n_ate = 0;
 	pos.mlx = mlx;
 	set_pos_player(map, &pos);
