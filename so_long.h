@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:21:59 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/30 11:32:32 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/30 13:31:40 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ typedef struct s_pos {
 	char	**map;
 }				t_pos;
 
-int		check_map(int argc, char	*path);
+int		check_map(int argc, char	**map, char *path);
 int		check_right(char **map, t_pos *pos);
 int		check_left(char **map, t_pos *pos);
 int		check_up(char **map, t_pos *pos);

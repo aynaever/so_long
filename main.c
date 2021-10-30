@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 11:01:27 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/30 12:49:56 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/30 13:32:10 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ void	set_pos_player(char	**map, t_pos *pos)
 	}
 }
 
-static	int	show_error_map(int argc, char **argv)
+static	int	show_error_map(int argc, char **map, char *path)
 {
 	int	ret;
 
-	ret = check_map(argc, argv[1]);
+	ret = check_map(argc, map, path);
 	if (ret == 0)
 	{
 		printf("Error!\n");
@@ -58,10 +58,10 @@ int	main(int argc, char	**argv)
 	void	***imgs;
 	t_pos	pos;
 
-	if (show_error_map(argc, argv) == 0)
+	map = store_map(argv[1]);
+	if (show_error_map(argc, map, argv[1]) == 0)
 		return (0);
 	mlx = mlx_init();
-	map = store_map(argv[1]);
 	pos.map = map;
 	pos.n_movs = 1;
 	pos.n_rows = calc_rows(map);
