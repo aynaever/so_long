@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 10:21:55 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/30 11:07:42 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/30 13:22:01 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static	void	**draw_row(t_coor *coor, char	*line)
 
 	i = 0;
 	len = ft_strlen(line);
-	img_line = malloc(len * sizeof(void *));
+	img_line = (void **)malloc(len * sizeof(void *));
 	coor->x = 0;
 	while (i < len - 1)
 	{
