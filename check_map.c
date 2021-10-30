@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:14:29 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/30 11:06:58 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/30 11:48:19 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ static	int	check_comps(char	*path)
 	while (line != NULL)
 	{
 		count_comps(line, &ex, &col, &st);
+		free(line);
 		line = get_next_line(fd);
 	}
 	if (ex >= 1 && col >= 1 && st == 1)
@@ -110,7 +111,6 @@ int	check_map(int argc, char	*path)
 	if (fd == -1 || argc != 2)
 		return (0);
 	l = get_next_line(fd);
-	old_l = l;
 	len_frst = ft_strlen(l);
 	while (l != NULL)
 	{
