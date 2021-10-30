@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 10:21:55 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/29 15:29:10 by me               ###   ########.fr       */
+/*   Updated: 2021/10/30 11:07:42 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,15 +63,12 @@ void	*draw_map(char	**map, void	*mlx, void	***imgs, t_pos *pos)
 	n_rows = calc_rows(map);
 	n_cols = ft_strlen(map[0]);
 	i = 0;
-	win = mlx_new_window(mlx, n_cols * 63, n_rows * 63, "Funny Game");
+	win = mlx_new_window(mlx, n_cols * 58.5, n_rows * 63, "Funny Game");
 	coor.win = win;
 	coor.mlx = mlx;
 	coor.imgs = imgs;
 	pos->coor = &coor;
 	pos->imgs = imgs;
-	printf("imgs = %p\n", imgs);
-	printf("pos->coor->imgs = %p\n", pos->coor->imgs);
-	printf("pos->coor = %p\n", pos->coor);
 	while (i < 5)
 	{
 		imgs[i] = draw_row(&coor, map[i]);

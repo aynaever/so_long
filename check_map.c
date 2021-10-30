@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:14:29 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/24 10:21:45 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/30 11:06:58 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,28 +101,27 @@ int	check_map(int argc, char	*path)
 {
 	int		fd;
 	size_t	nl;
-	char	*line;
+	char	*l;
 	size_t	len_frst;
-	char	*old_line;
+	char	*old_l;
 
 	fd = open(path, O_RDONLY);
 	nl = 1;
 	if (fd == -1 || argc != 2)
 		return (0);
-	line = get_next_line(fd);
-	old_line = line;
-	len_frst = ft_strlen(line);
-	while (line != NULL)
+	l = get_next_line(fd);
+	old_l = l;
+	len_frst = ft_strlen(l);
+	while (l != NULL)
 	{
-		old_line = line;
-		if (check_valid_chars(line) == 0 || check_line(nl, line) == 0
-			|| ft_strlen(line) != len_frst)
+		old_l = l;
+		if (check_valid_chars(l) == 0 || check_line(nl, l) == 0
+			|| ft_strlen(l) != len_frst)
 			return (0);
-		line = get_next_line(fd);
+		l = get_next_line(fd);
 		nl++;
 	}
-	if (nl == len_frst || check_line(1, old_line) == 0
-		|| check_comps(path) == 0)
+	if (nl == len_frst || check_line(1, old_l) == 0 || check_comps(path) == 0)
 		return (0);
 	return (1);
 }

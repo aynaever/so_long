@@ -10,8 +10,6 @@
 
 #include "so_long.h"
 
-
-
 int	move_right(char	**map, t_pos *pos)
 {
 	int	ret_check;
