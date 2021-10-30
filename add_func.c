@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 01:43:42 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/30 11:37:32 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/30 14:03:44 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,13 @@ static int	key_hook(int	keycode, t_pos *pos)
 	return (0);
 }
 
+static int	close_window(t_pos *pos)
+{
+	exit(0);
+}
+
 void	add_func(void	*win, t_pos *pos)
 {
 	mlx_key_hook(win, key_hook, pos);
+	mlx_hook(win, 17, (1L << 17), close_window, pos);
 }
