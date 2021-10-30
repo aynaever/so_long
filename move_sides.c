@@ -20,20 +20,20 @@ int	move_right(char	**map, t_pos *pos)
 	else if (ret_check == 1)
 	{
 		do_gmove_r(pos->imgs, pos);
-		printf("Move to right x=%d ; y=%d \n", pos->x, pos->y);
+		printf("Move %d \n", pos->n_movs++);
 	}
 	else if (ret_check == 2)
 	{
 		pos->n_ate++;
 		do_gmove_r(pos->imgs, pos);
 		map[pos->y][pos->x] = '0';
-		printf("Eat Collectible x=%d ; y=%d \n", pos->x, pos->y);
+		printf("Move %d \n", pos->n_movs++);
 	}
 	else if (ret_check == 3 && pos->n_ate == pos->n_coll)
 	{
 		pos->x++;
 		do_gmove_r(pos->imgs, pos);
-		printf("Exit x=%d ; y=%d \n", pos->x, pos->y);
+		printf("Move %d \n", pos->n_movs++);
 		exit(0);
 	}
 	return (0);
@@ -49,20 +49,20 @@ int	move_left(char	**map, t_pos *pos)
 	else if (ret_check == 1)
 	{
 		do_gmove_l(pos->imgs, pos);
-		printf("Move to left x=%d ; y=%d \n", pos->x, pos->y);
+		printf("Move %d \n", pos->n_movs++);
 	}
 	else if (ret_check == 2)
 	{
 		pos->n_ate++;
 		do_gmove_l(pos->imgs, pos);
 		map[pos->y][pos->x] = '0';
-		printf("Eat Collectible x=%d ; y=%d \n", pos->x, pos->y);
+		printf("Move %d \n", pos->n_movs++);
 	}
 	else if (ret_check == 3 && pos->n_ate == pos->n_coll)
 	{
 		pos->x--;
 		do_gmove_l(pos->imgs, pos);
-		printf("Exit x=%d ; y=%d \n", pos->x, pos->y);
+		printf("Move %d \n", pos->n_movs++);
 		exit(0);
 	}
 	return (0);
@@ -78,19 +78,19 @@ int	move_up(char	**map, t_pos *pos)
 	else if (ret_check == 1)
 	{
 		do_gmove_u(pos->imgs, pos);
-		printf("Move to up x=%d ; y=%d \n", pos->x, pos->y);
+		printf("Move %d \n", pos->n_movs++);
 	}
 	else if (ret_check == 2)
 	{
 		pos->n_ate++;
 		do_gmove_u(pos->imgs, pos);
 		map[pos->y][pos->x] = '0';
-		printf("Eat Collectible up x=%d ; y=%d \n", pos->x, pos->y);
+		printf("Move %d \n", pos->n_movs++);
 	}
 	else if (ret_check == 3 && pos->n_ate == pos->n_coll)
 	{
 		pos->y--;
-		printf("Exit up x=%d ; y=%d \n", pos->x, pos->y);
+		printf("Move %d \n", pos->n_movs++);
 		exit(0);
 	}
 	return (0);
@@ -106,19 +106,19 @@ int	move_bottom(char	**map, t_pos *pos)
 	else if (ret_check == 1)
 	{
 		do_gmove_b(pos->imgs, pos);
-		printf("Move to bottom up x=%d ; y=%d \n", pos->x, pos->y);
+		printf("Move %d \n", pos->n_movs++);
 	}
 	else if (ret_check == 2)
 	{
 		pos->n_ate++;
 		do_gmove_b(pos->imgs, pos);
 		map[pos->y][pos->x] = '0';
-		printf("Eat Collectible up x=%d ; y=%d \n", pos->x, pos->y);
+		printf("Move %d \n", pos->n_movs++);
 	}
 	else if (ret_check == 3 && pos->n_ate == pos->n_coll)
 	{
 		do_gmove_b(pos->imgs, pos);
-		printf("Exit up x=%d ; y=%d \n", pos->x, pos->y);
+		printf("Move %d \n", pos->n_movs++);
 		exit(0);
 	}
 	return (0);

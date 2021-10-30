@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 11:01:27 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/30 11:13:09 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/30 11:37:11 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int	main(int argc, char	**argv)
 	mlx = mlx_init();
 	map = store_map(argv[1]);
 	pos.map = map;
+	pos.n_movs = 1;
 	pos.n_rows = calc_rows(map);
 	pos.n_cols = ft_strlen(map[0]);
 	imgs = (void ***) malloc(pos.n_rows * sizeof(void *));

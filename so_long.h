@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:21:59 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/29 15:36:56 by me               ###   ########.fr       */
+/*   Updated: 2021/10/30 11:32:32 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct s_pos {
 	int		n_cols;
 	int		n_coll;
 	int		n_ate;
+	int		n_movs;
 	t_coor	*coor;
 	void	***imgs;
 	char	**map;
