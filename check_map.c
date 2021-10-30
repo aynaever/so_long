@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:14:29 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/30 13:32:56 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/30 13:35:54 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,8 @@ int	check_map(int argc, char	**map, char	*path)
 		nl++;
 		i++;
 	}
-	if (nl == len_frst || check_line(1, map[i - 1]) == 0 || check_comps(path) == 0)
+	if (nl == len_frst || check_line(1, map[i - 1]) == 0
+		|| check_comps(path) == 0)
 		return (0);
 	return (1);
 }
