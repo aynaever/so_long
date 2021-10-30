@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 14:23:57 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/30 14:23:58 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/30 17:27:58 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	move_right(char	**map, t_pos *pos)
 		pos->x++;
 		do_gmove_r(pos->imgs, pos);
 		printf("Move %d \n", pos->n_movs++);
-		exit(0);
+		close_window(pos);
 	}
 	return (0);
 }
@@ -65,7 +65,7 @@ int	move_left(char	**map, t_pos *pos)
 		pos->x--;
 		do_gmove_l(pos->imgs, pos);
 		printf("Move %d \n", pos->n_movs++);
-		exit(0);
+		close_window(pos);
 	}
 	return (0);
 }
@@ -93,7 +93,7 @@ int	move_up(char	**map, t_pos *pos)
 	{
 		pos->y--;
 		printf("Move %d \n", pos->n_movs++);
-		exit(0);
+		close_window(pos);
 	}
 	return (0);
 }
@@ -121,7 +121,7 @@ int	move_bottom(char	**map, t_pos *pos)
 	{
 		do_gmove_b(pos->imgs, pos);
 		printf("Move %d \n", pos->n_movs++);
-		exit(0);
+		close_window(pos);
 	}
 	return (0);
 }

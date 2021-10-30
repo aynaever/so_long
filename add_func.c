@@ -6,16 +6,27 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 01:43:42 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/30 16:34:53 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/30 17:48:43 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+int	close_window(t_pos *pos)
+{
+	free_imgs(pos);
+	free(pos->map);
+	free(pos->imgs);
+	mlx_destroy_window(pos->mlx, pos->win);
+	mlx_destroy_display(pos->mlx);
+	free(pos->mlx);
+	exit(0);
+}
+
 static int	key_hook(int keycode, t_pos *pos)
 {
 	if (keycode == ESC_KEY)
-		exit(0);
+		close_window(pos);
 	else if (keycode == A_KEY)
 		move_left(pos->map, pos);
 	else if (keycode == S_KEY)
@@ -27,9 +38,24 @@ static int	key_hook(int keycode, t_pos *pos)
 	return (0);
 }
 
-static int	close_window(void)
+void	free_imgs(t_pos	*pos)
 {
-	exit(0);
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < pos->n_rows)
+	{
+		j = 0;
+		free(pos->map[i]);
+		while (j < pos->n_cols - 1)
+		{
+			mlx_destroy_image(pos->mlx, pos->imgs[i][j]);
+			j++;
+		}
+		free(pos->imgs[i]);
+		i++;
+	}
 }
 
 void	add_func(void	*win, t_pos *pos)

@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:21:59 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/30 16:34:32 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/30 17:28:34 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,7 @@ int		do_gmove_r(void	***imgs, t_pos *pos);
 int		do_gmove_l(void	***imgs, t_pos *pos);
 int		do_gmove_u(void	***imgs, t_pos *pos);
 int		do_gmove_b(void	***imgs, t_pos *pos);
+int		close_window(t_pos *pos);
+void	free_imgs(t_pos *pos);
 
 #endif
