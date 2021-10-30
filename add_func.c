@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 01:43:42 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/30 14:03:44 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/30 14:05:22 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	key_hook(int	keycode, t_pos *pos)
 	return (0);
 }
 
-static int	close_window(t_pos *pos)
+static int	close_window(void)
 {
 	exit(0);
 }

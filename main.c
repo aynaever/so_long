@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 11:01:27 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/30 13:32:10 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/30 14:13:46 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,21 @@ static	int	show_error_map(int argc, char **map, char *path)
 	if (ret == 0)
 	{
 		printf("Error!\n");
+		return (0);
+	}
+	else if (ret == -2)
+	{
+		printf("Error!\nEnter a valid path and one argument\n");
+		return (0);
+	}
+	else if (ret == -1)
+	{
+		printf("Error!\nEnter a valid map containing all required chars\n");
+		return (0);
+	}
+	else if (ret == 2)
+	{
+		printf("Error!\nThe map must be square and surrounded by walls\n");
 		return (0);
 	}
 	return (1);

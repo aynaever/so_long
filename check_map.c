@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:14:29 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/30 13:35:54 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/30 14:11:14 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,18 +107,18 @@ int	check_map(int argc, char	**map, char	*path)
 	nl = 1;
 	i = 0;
 	if (argc != 2)
-		return (0);
+		return (-2);
 	len_frst = ft_strlen(map[i]);
 	while (map[i] != NULL)
 	{
 		if (check_valid_chars(map[i]) == 0 || check_line(nl, map[i]) == 0
 			|| ft_strlen(map[i]) != len_frst)
-			return (0);
+			return (-1);
 		nl++;
 		i++;
 	}
 	if (nl == len_frst || check_line(1, map[i - 1]) == 0
 		|| check_comps(path) == 0)
-		return (0);
+		return (2);
 	return (1);
 }
