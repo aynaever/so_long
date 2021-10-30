@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 13:09:00 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/30 11:28:15 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/30 16:38:48 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static int	get_nor(char *path)
 	int		fd;
 
 	fd = open(path, O_RDONLY);
+	if (fd == -1)
+		return (-1);
 	line = get_next_line(fd);
 	nor = 1;
 	while (line != NULL)
@@ -41,7 +43,7 @@ char	**store_map(char	*path)
 	fd = open(path, O_RDONLY);
 	nor = get_nor(path);
 	map = (char **)malloc(nor * sizeof(char *));
-	if (map == NULL || fd == -1)
+	if (map == NULL || fd == -1 || nor == -1)
 		return (NULL);
 	line = get_next_line(fd);
 	i = 0;

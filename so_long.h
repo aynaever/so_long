@@ -6,7 +6,7 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:21:59 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/30 14:37:19 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/30 16:34:32 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 # include <stdlib.h>
 # include <stdbool.h>
 
-# define	ESC_KEY 65307
-# define	A_KEY 97
-# define	W_KEY 119
-# define	S_KEY 115
-# define	D_KEY 100
+# define ESC_KEY 65307
+# define A_KEY 97
+# define W_KEY 119
+# define S_KEY 115
+# define D_KEY 100
 
 typedef struct s_coor {
 	void	*mlx;

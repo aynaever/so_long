@@ -6,14 +6,13 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:14:29 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/30 14:11:14 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/30 16:40:53 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "../libft/libft.h"
 
-static int	check_line(int	is_middle, char	*line)
+static int	check_line(int is_middle, char	*line)
 {
 	size_t	len_line;
 	size_t	i;
@@ -106,7 +105,7 @@ int	check_map(int argc, char	**map, char	*path)
 
 	nl = 1;
 	i = 0;
-	if (argc != 2)
+	if (map == NULL || path == NULL || argc != 2)
 		return (-2);
 	len_frst = ft_strlen(map[i]);
 	while (map[i] != NULL)

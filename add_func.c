@@ -6,13 +6,13 @@
 /*   By: anaouadi <anaouadi@student.42wolfsbu       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 01:43:42 by anaouadi          #+#    #+#             */
-/*   Updated: 2021/10/30 14:05:22 by anaouadi         ###   ########.fr       */
+/*   Updated: 2021/10/30 16:34:53 by anaouadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static int	key_hook(int	keycode, t_pos *pos)
+static int	key_hook(int keycode, t_pos *pos)
 {
 	if (keycode == ESC_KEY)
 		exit(0);
